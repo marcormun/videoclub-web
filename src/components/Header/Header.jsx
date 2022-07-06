@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { FilmIcon } from '@heroicons/react/solid'
 const Header = () => {
     return (
-        <body className="font-sans bg-gray-900 text-white"> 
+        <div className="font-sans bg-gray-900 text-white"> 
             <nav className="border-b border-gray-800">
                 <div className="container mx-auto flex items-end justify-between px-4 py-6">
                     <ul className="flex items-center">
@@ -23,7 +23,7 @@ const Header = () => {
                     </ul>
                 </div>
             </nav>
-        </body>
+        </div>
     )
 };
 
