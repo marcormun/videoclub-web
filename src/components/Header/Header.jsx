@@ -1,6 +1,12 @@
 import React, {useState} from 'react';
 import { FilmIcon } from '@heroicons/react/solid'
+import {useNavigate} from 'react-router-dom';
 const Header = () => {
+    let navegador = useNavigate();
+    
+    const viajar = (destino) => {
+        navegador(destino)
+    };
     return (
         <div className="font-sans bg-gray-900 text-white"> 
             <nav className="border-b border-gray-800">
@@ -15,7 +21,7 @@ const Header = () => {
                     </ul>
                     <ul className="flex items-center">
                         <li className='ml-16'>
-                            <a href="" className='hover:text-gray-300'>Login</a>
+                        <div className="headerButton" onClick={()=>viajar("/login")}>Login</div>
                         </li>
                         <li className='ml-16'>
                             <a href="" className='hover:text-gray-300'>Register</a>
