@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
-
+import { FilmIcon } from '@heroicons/react/solid'
 const Header = () => {
     return (
         <body className="font-sans bg-gray-900 text-white"> 
             <nav className="border-b border-gray-800">
-                <div className="container mx-auto flex items-end justify-between px-6 py-8">
+                <div className="container mx-auto flex items-end justify-between px-4 py-6">
                     <ul className="flex items-center">
                         <li>
-                            <a href="#" className="text-white text-2xl font-bold">LOGO</a>
+                        <FilmIcon className="h-6 w-6 text-white"/>
+                        </li>
+                        <li>
+                            <a href="#" className="text-white text-2xl font-bold">&nbsp;FilmClub</a>
                         </li>
                     </ul>
                     <ul className="flex items-center">
