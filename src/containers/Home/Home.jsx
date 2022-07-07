@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { StarIcon } from '@heroicons/react/solid'
 import { useSelector,useDispatch } from 'react-redux';
-// import { searchData } from '../../components/Header/searchSlice';
+import { searchData } from '../../components/Header/searchSlice';
 import { keepFilm } from '../../containers/FilmDetail/detailSlice';
 import { useNavigate } from 'react-router-dom';
 const Home = () => {

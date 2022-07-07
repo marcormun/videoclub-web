@@ -1,6 +1,22 @@
 import React, {useState} from 'react';
 import { FilmIcon } from '@heroicons/react/solid'
+import {useNavigate} from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { userData, logOut } from '../../containers/User/userSlice';
+
+
 const Header = () => {
+    const credenciales = useSelector(userData);
+    let navegador = useNavigate();
+    const dispatch = useDispatch();
+
+
+
+
+    const viajar = (destino) => {
+        navegador(destino)
+    };
+    if(!credenciales?.user_role){
     return (
         <div className="font-sans bg-gray-900 text-white"> 
             <nav className="border-b border-gray-800">
@@ -10,21 +26,31 @@ const Header = () => {
                         <FilmIcon className="h-6 w-6 text-white"/>
                         </li>
                         <li>
-                            <a href="#" className="text-white text-2xl font-bold">&nbsp;FilmClub</a>
+                            <a href="/profile" className="text-white text-2xl font-bold">&nbsp;FilmClub</a>
                         </li>
                     </ul>
                     <ul className="flex items-center">
                         <li className='ml-16'>
-                            <a href="" className='hover:text-gray-300'>Login</a>
+                        <div className="headerButton" onClick={()=>viajar("/login")}>Login</div>
                         </li>
                         <li className='ml-16'>
-                            <a href="" className='hover:text-gray-300'>Register</a>
+                        <div className='textLink' onClick={()=>viajar("/register")}>Register</div>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
     )
+    }else {
+
+        return (
+            <div className='headerDesign'>
+                <div className='textLink' onClick={()=>viajar("/profile")}>{credenciales?.user_role}</div>
+                <div className='textLink' onClick={()=>dispatch(logOut())}>log out</div>
+            </div>
+        )
+
+    }
 };
 
 export default Header;
