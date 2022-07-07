@@ -38,10 +38,6 @@ const Home = () => {
         dispatch(keepFilm(pelicula));
 
 
-        //Segundo paso, redirigimos a FilmDetail donde veremos
-        //los detalles de la película y si estamos logeados (tenemos token),
-        //podremos alquilar la película.
-
         setTimeout(()=>{
             navegador("/detail");
         },500);
