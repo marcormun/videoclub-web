@@ -87,7 +87,8 @@ const Login = () => {
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Contraseña</label>
             <input  className="w-64 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700"
                 type='password'  name='password' title='password' onChange={updateCredentials} lenght='30' placeholder='*******'/>
-            <div className=" block w-64 mt-2 mb-2 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={()=>logeame()}>Login</div>
+                <div class="flex justify-center gap-9">
+            <div className=" block w-64 mt-2 mb-2 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={()=>logeame()}>Login</div></div>
             <div className='mt-2'>{msgError}</div>
          </div>
          

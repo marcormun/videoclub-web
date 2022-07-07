@@ -17,7 +17,7 @@ const Profile = () => {
         <div>
 
 
-            <div>
+            <div class="grid grid-cols-2 gap-2">
                 <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Nombre</label>
                 <p className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_name}</p>
                 <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Email</label>
