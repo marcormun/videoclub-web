@@ -107,31 +107,40 @@ const Register = (props) => {
 
                 <div className="registerInputs">
                     <div className="registerInputsLeft">
-                        <label className="block text-gray-500 font-bold md:text-center mt-3 mb-3 pr-4">Nombre</label>
-                        <input className='designInput' placeholder='name' type='text' name='name' title='name' onChange={updateUserData} lenght='30' />
-                        <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Apellido</label>
-                        <input className='designInput' placeholder='surname' type='text' name='surname' title='surname' onChange={updateUserData} lenght='30' />
+                        <label className="block text-gray-400 font-bold md:text-center mt-3 mb-3 pr-4">Nombre</label>
+                        <input  className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text'  name='Nombre' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Nombre'/>
+                        
+                        <label className="block text-gray-700 font-bold md:text-top mt-3 mb-3 pr-4">Apellido</label>
+                        
+                        <input  className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text'  name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido'/>
+                        
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Email</label>
-                        <input className='designInput' placeholder='email' type='email' name='email' title='email' onChange={updateUserData} lenght='30' />
+                        <input  className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text'  name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido'/>
+                        
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Password</label>
-                        <input className='designInput' placeholder='password' type='password' name='password' title='password' onChange={updateUserData} lenght='30' />
+                        <input  className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text'  name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido'/>
+                        
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Repite Password</label>
-                        <input className='designInput' placeholder='password2' type='password' name='password2' title='password2' onChange={updateUserData} lenght='30' />
+                        <input  className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text'  name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido'/>
 
                     </div>
 
                     <div className="registerInputsRight">
 
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Telefono</label>
-                        <input className='designInput' placeholder='phone' type='text' name='phone' title='phone' onChange={updateUserData} lenght='30' />
+                        <input  className="w-64 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text'  name='phone' title='phone' onChange={updateUserData} lenght='30' placeholder='Telefono'/>
+                        
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Direccion</label>
-                        <input className='designInput' placeholder='address' type='text' name='address' title='address' onChange={updateUserData} lenght='30' />
+                        <input  className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text'  name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido'/>
+                        
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Ciudad</label>
-                        <input className='designInput' placeholder='city' type='text' name='city' title='city' onChange={updateUserData} lenght='30' />
+                        <input  className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text'  name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido'/>
+                        
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Metodo Pago</label>
-                        <input className='designInput' placeholder='payment' type='text' name='payment' title='payment' onChange={updateUserData} lenght='30' />
+                        <input  className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text'  name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido'/>
+                        
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Fecha Nacimiento</label>
-                        <input className='designInput' type='Date' name='birth' title='birth' onChange={updateUserData} lenght='30' />
+                        <input  className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text'  name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido'/>
 
                     </div>
                 </div>
