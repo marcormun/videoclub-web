@@ -102,16 +102,15 @@ const Register = (props) => {
 
 
         return (
-            <div className='h-128'>
+            <div>
                
 
-                <div className="registerInputs">
-                    <div className="registerInputsLeft">
+                <div>
+                    <div  class="grid grid-cols-6 gap-5">
                         <label className="block text-gray-400 font-bold md:text-center mt-3 mb-3 pr-4">Nombre</label>
                         <input  className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text'  name='Nombre' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Nombre'/>
                         
                         <label className="block text-gray-700 font-bold md:text-top mt-3 mb-3 pr-4">Apellido</label>
-                        
                         <input  className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text'  name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido'/>
                         
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Email</label>
@@ -123,9 +122,6 @@ const Register = (props) => {
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Repite Password</label>
                         <input  className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text'  name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido'/>
 
-                    </div>
-
-                    <div className="registerInputsRight">
 
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Telefono</label>
                         <input  className="w-64 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text'  name='phone' title='phone' onChange={updateUserData} lenght='30' placeholder='Telefono'/>
