@@ -12,7 +12,7 @@ const Profile = () => {
     console.log();
     
      return (
-         <div className='profileDesign'>{datosUsuario.mail}{" "}{datosUsuario.user_role}
+         <div className='profileDesign'>{datosUsuario.user_mail}{" "}{datosUsuario.user_role}
          </div>
      )
 }
