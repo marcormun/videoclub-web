@@ -103,7 +103,7 @@ const Register = (props) => {
 
         return (
             <div className='h-128'>
-                <pre>{JSON.stringify(datosUser, null,2)}</pre>
+               
 
                 <div className="registerInputs">
                     <div className="registerInputsLeft">

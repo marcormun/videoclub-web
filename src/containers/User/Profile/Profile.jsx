@@ -12,9 +12,26 @@ const Profile = () => {
     console.log();
     
      return (
-         <div className='profileDesign'>{datosUsuario.user_mail}{datosUsuario.token}{datosUsuario.user_role}
-          <pre>{JSON.stringify(datosUsuario, null,2)}</pre>
-         </div>
+        //<pre>{JSON.stringify(datosUsuario, null,2)}</pre>
+          
+        <div>
+            
+            
+            <div>
+            <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Nombre</label>
+            <p className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_name}</p>
+            <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Email</label>
+            <p className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_email}</p>
+            <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Role</label>
+            <p className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_role}</p>
+            
+        </div>
+
+        </div>
+        
+
+
+         //</div>
      )
 }
 export default Profile; 
