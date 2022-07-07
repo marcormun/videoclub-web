@@ -1,7 +1,4 @@
 import React, {useState, useEffect} from 'react';
-
-
-
 import {useNavigate} from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { loginUser, userData} from "../userSlice";
@@ -30,9 +27,17 @@ const Login = () => {
         
         if(credenciales?.token !== ''){
             navigate("/");
+            console.log("sin token");
         };
         // eslint-disable-next-line 
     },[]);
+
+
+    useEffect(() => {
+        if (credenciales?.token !== "") {
+            navigate('/');
+        }
+    });
 
     //Funciones
     const logeame = () => {
@@ -77,7 +82,7 @@ const Login = () => {
      return (
          <div className='loginDesign'>
             <pre>{JSON.stringify(credentials, null,2)}</pre>
-            <input  type='email' name='email' title='email' onChange={updateCredentials} lenght='30'/><br></br>
+            <input type='email' name='email' title='email' onChange={updateCredentials} lenght='30'/><br></br>
             <input  type='password'  name='password' title='password' onChange={updateCredentials} lenght='30'/>
             <div className="sendButton" onClick={()=>logeame()}>Login</div>
             <div>{msgError}</div>
