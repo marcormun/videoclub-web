@@ -140,7 +140,7 @@ const Register = (props) => {
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Metodo Pago</label>
                         <input className='designInput' placeholder='payment' type='text' name='payment' title='payment' onChange={updateUserData} lenght='30' />
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Fecha Nacimiento</label>
-                        <input className='designInput' placeholder='birth' type='Date' name='birth' title='birth' onChange={updateUserData} lenght='30' />
+                        <input className='designInput'  type='Date' name='birth' title='birth' onChange={updateUserData} lenght='30' />
     
                     </div>
                 </div>
@@ -154,9 +154,12 @@ const Register = (props) => {
                 {/* Siempre que tengamos botones en un return, les incluyo un callback antes de la funcion
                 ya que en caso contrario, siempre se ejecutarán la primera vez que se cargue el container/componente
                 y no cuando yo haga click que es lo que quiero */}
-                <div className="sendRegisterDesign" onClick={()=>Registrame()}>
+                <div className="s block w-64 mt-2 mb-2 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={()=>Registrame()}>
                     Registrame
                 </div>
+
+
+                
             </div>
         )
     }
