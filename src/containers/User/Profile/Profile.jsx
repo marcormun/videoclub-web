@@ -1,5 +1,5 @@
 import React from 'react';
-//import './Profile.css';
+
 import { useSelector } from 'react-redux';
 import { userData } from '../userSlice';
 import jwt from 'jwt-decode';
@@ -12,7 +12,7 @@ const Profile = () => {
     console.log();
     
      return (
-         <div className='profileDesign'>{datosUsuario.user_mail}{" "}{datosUsuario.user_role}
+         <div className='profileDesign'>{datosUsuario.user_mail}{datosUsuario.token}{datosUsuario.user_role}
          </div>
      )
 }
