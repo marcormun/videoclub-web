@@ -41,15 +41,15 @@ const Header = () => {
                                 </li>
                             </ul>
                         :
-                        <ul className="flex items-center">
-                        <li className='ml-16'>
-                            <div className='textLink' onClick={() => viajar("/profile")}>Perfil</div>
-                        </li>
-                        <li className='ml-16'>
-                            <div className='textLink' onClick={() => dispatch(logOut())}>Cerrar sesión</div>
-                        </li>
-                    </ul>
-                    }
+                            <ul className="flex items-center">
+                                <li className='ml-16'>
+                                    <div className='textLink' onClick={() => viajar("/profile")}>Perfil</div>
+                                </li>
+                                <li className='ml-16'>
+                                    <div className='textLink' onClick={() => dispatch(logOut())}>Cerrar sesión</div>
+                                </li>
+                            </ul>
+                        }
                     </div>
                 </nav>
             </div>
