@@ -1,5 +1,3 @@
-
-
 import { createSlice } from '@reduxjs/toolkit';
 
 export const detailSlice = createSlice({
@@ -9,6 +7,7 @@ export const detailSlice = createSlice({
     },
     reducers: {
       dataFilm: (state, action) => {
+        console.log("Holaaa",action);
         return {
           ...state,
           ...action.payload
@@ -18,9 +17,8 @@ export const detailSlice = createSlice({
 });
 
 export const keepFilm = (pelicula) => async (dispatch) => {
-    
+    console.log(pelicula);
     dispatch(dataFilm(pelicula));
-       
 };
 
 
