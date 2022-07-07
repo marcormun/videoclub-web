@@ -6,21 +6,21 @@ import Home from './containers/Home/Home';
 
 function App() {
   return (
-    <div className="font-sans bg-gray-900 text-white w-screen h-screen">
-    <div className="App">
-      <BrowserRouter>
+    <div className="font-sans bg-gray-900 text-white w-screen h-max">
+      <div className="App">
+        <BrowserRouter>
 
-        <Header/>
-      
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          {/* <Route path="/login" element={<Login/>}/> */}
-          {/* <Route path="/register" element={<Register/>}/> */}
-          {/* <Route path="/profile" element={<Profile/>}/> */}
-        </Routes>
+          <Header/>
+        
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            {/* <Route path="/login" element={<Login/>}/> */}
+            {/* <Route path="/register" element={<Register/>}/> */}
+            {/* <Route path="/profile" element={<Profile/>}/> */}
+          </Routes>
 
-      </BrowserRouter>
-    </div>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
