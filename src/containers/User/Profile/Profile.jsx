@@ -13,6 +13,7 @@ const Profile = () => {
     
      return (
          <div className='profileDesign'>{datosUsuario.user_mail}{datosUsuario.token}{datosUsuario.user_role}
+          <pre>{JSON.stringify(datosUsuario, null,2)}</pre>
          </div>
      )
 }

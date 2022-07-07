@@ -103,11 +103,11 @@ const Register = (props) => {
 
         return (
             <div className='h-128'>
-                {/* <pre>{JSON.stringify(datosUser, null,2)}</pre> */}
+                <pre>{JSON.stringify(datosUser, null,2)}</pre>
 
                 <div className="registerInputs">
                     <div className="registerInputsLeft">
-                        <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Nombre</label>
+                        <label className="block text-gray-500 font-bold md:text-center mt-3 mb-3 pr-4">Nombre</label>
                         <input className='designInput' placeholder='name' type='text' name='name' title='name' onChange={updateUserData} lenght='30' />
                         <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Apellido</label>
                         <input className='designInput' placeholder='surname' type='text' name='surname' title='surname' onChange={updateUserData} lenght='30' />
