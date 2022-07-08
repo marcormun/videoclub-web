@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FilmIcon } from '@heroicons/react/solid'
+import { SearchIcon,FilmIcon } from '@heroicons/react/solid'
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { userData, logOut } from '../../containers/User/userSlice';
@@ -30,26 +30,32 @@ const Header = () => {
                                 </li>
                             </ul>
                         </div>
-                        
-                        {!credenciales.user_role ?
-                            <ul className="flex items-center">
-                                <li className='ml-16'>
-                                    <div className="headerButton" onClick={() => viajar("/login")}>Login</div>
-                                </li>
-                                <li className='ml-16'>
-                                    <div className='textLink' onClick={() => viajar("/register")}>Register</div>
-                                </li>
-                            </ul>
-                        :
-                            <ul className="flex items-center">
-                                <li className='ml-16'>
-                                    <div className='textLink' onClick={() => viajar("/profile")}>Perfil</div>
-                                </li>
-                                <li className='ml-16'>
-                                    <div className='textLink' onClick={() => dispatch(logOut())}>Cerrar sesión</div>
-                                </li>
-                            </ul>
-                        }
+                        <div className='flex'>
+                            <div className="flex items-center">
+                                <div className="relative">
+                                    <input type="text" className="bg-gray-800 rounded-full w-48 px-4 py-1 focus:outline-none focus:shadow-outline" placeholder='Busca una pelicula'/>
+                                </div>
+                            </div>
+                            {!credenciales.user_role ?
+                                <ul className="flex items-center">
+                                    <li className='ml-16'>
+                                        <div className="headerButton" onClick={() => viajar("/login")}>Login</div>
+                                    </li>
+                                    <li className='ml-16'>
+                                        <div className='textLink' onClick={() => viajar("/register")}>Register</div>
+                                    </li>
+                                </ul>
+                            :
+                                <ul className="flex items-center">
+                                    <li className='ml-16'>
+                                        <div className='textLink' onClick={() => viajar("/profile")}>Perfil</div>
+                                    </li>
+                                    <li className='ml-16'>
+                                        <div className='textLink' onClick={() => dispatch(logOut())}>Cerrar sesión</div>
+                                    </li>
+                                </ul>
+                            }
+                        </div>
                     </div>
                 </nav>
             </div>
