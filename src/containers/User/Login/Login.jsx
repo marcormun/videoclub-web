@@ -80,14 +80,14 @@ const Login = () => {
     };
 
      return (
-         <div className='h-128'>
-            <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Correo</label>
-            <input type='email' class="w-64 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" 
+         <div className='flex flex-col content-center items-center align-middle h-128 w-64 ml-auto mr-auto'>
+            <label className="block h-12 text-gray-500 font-bold md:text-top mt-6 pr-4">Correo</label>
+            <input type='email' class="w-64 h-12 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" 
                 name='email' title='email' onChange={updateCredentials} lenght='30' placeholder='email@email.com'/>
-            <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Contraseña</label>
-            <input  className="w-64 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700"
+            <label className="block h-12 text-gray-500 font-bold md:text-top mt-6 pr-4">Contraseña</label>
+            <input  className="w-64 h-12 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700"
                 type='password'  name='password' title='password' onChange={updateCredentials} lenght='30' placeholder='*******'/>
-            <div className=" block w-64 mt-2 mb-2 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={()=>logeame()}>Login</div>
+            <div className="content-center h-12 w-64 mt-6 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={()=>logeame()}>Login</div>
             <div className='mt-2'>{msgError}</div>
          </div>
          
