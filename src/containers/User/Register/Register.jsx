@@ -136,7 +136,7 @@ const Register = (props) => {
                         <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido' />
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Fecha Nacimiento</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido' />
+                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='date' name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido' />
 
                     </div>
                 </div>
