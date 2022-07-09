@@ -24,7 +24,6 @@ const Profile = () => {
                 <p className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_email}</p>
                 <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Role</label>
                 <p className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_role}</p>
-
             </div>
 
         </div>
