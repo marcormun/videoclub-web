@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
 import { useNavigate } from 'react-router-dom'
 
 
@@ -44,7 +45,7 @@ const Register = (props) => {
 
     //Funciones
 
-    const Registrame = async () => {
+    const Register = async () => {
 
         //Primero, comprobación de campos vacíos
 
@@ -70,11 +71,12 @@ const Register = (props) => {
         //Limpiamos error
         setMsgError(false);
 
-        // try {
+            //try {
 
         //     //axios....comunicamos con el backend
 
-        //     // let resultado = await axios.post("endpointregister",datosUser);
+        let resultado = await axios.post("https://videoclub-proyecto5.herokuapp.com/api/auth/register", datosUser);
+        
 
         setCongratulations(true);
 
@@ -98,7 +100,7 @@ const Register = (props) => {
     } else {
 
 
-
+        console.log(datosUser);
         return (
             <div className='h-128'>
 
@@ -106,26 +108,36 @@ const Register = (props) => {
                 <div>
                     <div class="grid grid-cols-2 gap-9">
                         <label className="block text-gray-400 font-bold md:text-center mt-3 mb-3 pr-4">Nombre</label>
-                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='name' title='name' onChange={updateUserData} lenght='30' placeholder='Nombre' />
+                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='name' title='name' onChange={updateUserData} lenght='30' placeholder='Nombre' />
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Apellido</label>
-                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='surname' title='surname' onChange={updateUserData} lenght='30' placeholder='Apellido' />
+                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='surname' title='surname' onChange={updateUserData} lenght='30' placeholder='Apellido' />
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Email</label>
-                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='email' title='email' onChange={updateUserData} lenght='30' placeholder='Email' />
+                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='email' title='email' onChange={updateUserData} lenght='30' placeholder='Email' />
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Password</label>
-                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='password' name='password' title='password' onChange={updateUserData} lenght='30' placeholder='Contraseña' />
+                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='password' title='password' onChange={updateUserData} lenght='30' placeholder='Password' />
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Repite Password</label>
-                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='password' name='password2' title='password2' onChange={updateUserData} lenght='30' placeholder='Contraseña' />
+                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='password2' title='password2' onChange={updateUserData} lenght='30' placeholder='`Password' />
 
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Telefono</label>
                         <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='phone' title='phone' onChange={updateUserData} lenght='30' placeholder='Telefono' />
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Direccion</label>
-                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='address' title='address' onChange={updateUserData} lenght='30' placeholder='Direccion' />
+                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='address' title='address' onChange={updateUserData} lenght='30' placeholder='Direccion' />
+
+                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Ciudad</label>
+                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='city' title='city' onChange={updateUserData} lenght='30' placeholder='Ciudad' />
+
+                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Metodo Pago</label>
+                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='payment' title='payment' onChange={updateUserData} lenght='30' placeholder='Metodo Pago' />
+
+                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Fecha Nacimiento</label>
+                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='birth' title='birth' onChange={updateUserData} lenght='30' placeholder='Fecha Nacimiento' />
+
                     </div>
                 </div>
 
@@ -138,8 +150,9 @@ const Register = (props) => {
                 {/* Siempre que tengamos botones en un return, les incluyo un callback antes de la funcion
                 ya que en caso contrario, siempre se ejecutarán la primera vez que se cargue el container/componente
                 y no cuando yo haga click que es lo que quiero */}
-                <div class="mt-10 flex justify-center">
-                    <div className="block w-64 mt-2 mb-2 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => Registrame()}>
+                <div class="flex justify-center">
+                    
+                    <div className=" block w-64 mt-2 mb-2 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => Register()}>
                         Registrame
                     </div></div>
 
