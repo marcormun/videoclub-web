@@ -45,7 +45,7 @@ const Home = () => {
 
     return (
         <div className='container mx-auto px4 pt-16'>
-            <h2 className="uppercase tracking-wider text-orange-500 text-lg font-semibold">Catálogo</h2>
+            <h2 className="uppercase tracking-wider text-orange-300 text-2xl font-bold">Catálogo</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {
                 peliculasDefecto.map(pelicula => {

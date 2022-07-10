@@ -18,9 +18,15 @@ export const userSlice = createSlice({
       },
       logout: (state, action) => {
         return {
-          ...state.initialState
+          token: ''
         }
         
+      },
+      update: (state, action) => {
+        return {
+          ...state,
+          ...action.payload
+        }
       }
     },
 });
@@ -48,8 +54,44 @@ export const logOut = () => (dispatch) => {
   dispatch(logout());
 };
 
+export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) => {
+        
+  try {
 
-export const { login, logout } = userSlice.actions;
+      let body = {
+        name: perfilUsuario.user_name,
+        email: perfilUsuario.user_email,
+        password: perfilUsuario.user_password
+      }
+
+      console.log("soy el maldito body", body);
+
+      let config = {
+          headers: { Authorization: `Bearer ${datosUsuario.token}` }
+      };
+
+      let resultado = await axios.put(`https://videoclub-proyecto5.herokuapp.com/api/users/${datosUsuario.user_id}`,body, config);
+
+      //Después de cambiar en la database los datos de usuario, cambiamos esos datos
+      //en redux.
+
+      if(resultado.status === 200) {
+        console.log("entra aqui");
+        //Hacemos un update local de las credenciales del usuario
+         dispatch(update({perfilUsuario}));
+      }
+
+      // console.log("soy resultado", resultado);
+
+
+      
+  } catch (error) {
+
+      console.log(error);
+  }
+}
+
+export const { login, logout, update} = userSlice.actions;
 
 export const userData = (state) => state.user;
 

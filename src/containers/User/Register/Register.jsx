@@ -14,10 +14,7 @@ const Register = (props) => {
         password: "",
         password2: "",
         phone: "",
-        address: "",
-        city: "",
-        payment: "",
-        birth: "",
+        address: ""
     });
 
     const [msgError, setMsgError] = useState("");
@@ -30,6 +27,7 @@ const Register = (props) => {
     //Handlers
     const updateUserData = (e) => {
         setDatosUser({ ...datosUser, [e.target.name]: e.target.value })
+        console.log(datosUser)
     }
 
     //Funciones del componente (useEffect)
@@ -50,7 +48,7 @@ const Register = (props) => {
 
         //Primero, comprobación de campos vacíos
 
-        let mandatory = ['name', 'surname', 'email', 'password', 'password2', 'birth', 'payment'];
+        let mandatory = ['name', 'surname', 'email', 'password', 'password2', 'phone', 'address'];
 
         for (let field of mandatory) {
             if (datosUser[field] === '') {
@@ -102,42 +100,32 @@ const Register = (props) => {
 
 
         return (
-            <div>
+            <div className='h-128'>
 
 
                 <div>
-                    <div class="grid grid-cols-6 gap-9">
+                    <div class="grid grid-cols-2 gap-9">
                         <label className="block text-gray-400 font-bold md:text-center mt-3 mb-3 pr-4">Nombre</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='Nombre' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Nombre' />
+                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='name' title='name' onChange={updateUserData} lenght='30' placeholder='Nombre' />
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Apellido</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido' />
+                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='surname' title='surname' onChange={updateUserData} lenght='30' placeholder='Apellido' />
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Email</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido' />
+                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='email' title='email' onChange={updateUserData} lenght='30' placeholder='Email' />
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Password</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido' />
+                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='password' name='password' title='password' onChange={updateUserData} lenght='30' placeholder='Contraseña' />
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Repite Password</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido' />
+                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='password' name='password2' title='password2' onChange={updateUserData} lenght='30' placeholder='Contraseña' />
 
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Telefono</label>
-                        <input className="w-64 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='phone' title='phone' onChange={updateUserData} lenght='30' placeholder='Telefono' />
+                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='phone' title='phone' onChange={updateUserData} lenght='30' placeholder='Telefono' />
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Direccion</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido' />
-
-                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Ciudad</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido' />
-
-                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Metodo Pago</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido' />
-
-                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Fecha Nacimiento</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='Apellido' title='Nombre' onChange={updateUserData} lenght='30' placeholder='Apellido' />
-
+                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='address' title='address' onChange={updateUserData} lenght='30' placeholder='Direccion' />
                     </div>
                 </div>
 
@@ -150,8 +138,8 @@ const Register = (props) => {
                 {/* Siempre que tengamos botones en un return, les incluyo un callback antes de la funcion
                 ya que en caso contrario, siempre se ejecutarán la primera vez que se cargue el container/componente
                 y no cuando yo haga click que es lo que quiero */}
-                <div class="flex justify-center">
-                    <div className=" block w-64 mt-2 mb-2 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => Registrame()}>
+                <div class="mt-10 flex justify-center">
+                    <div className="block w-64 mt-2 mb-2 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => Registrame()}>
                         Registrame
                     </div></div>
 
