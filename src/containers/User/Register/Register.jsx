@@ -76,7 +76,7 @@ const Register = (props) => {
         //     //axios....comunicamos con el backend
 
         let resultado = await axios.post("https://videoclub-proyecto5.herokuapp.com/api/auth/register", datosUser);
-        
+        console.log(resultado);
 
         setCongratulations(true);
 
@@ -102,43 +102,32 @@ const Register = (props) => {
 
         console.log(datosUser);
         return (
-            <div className='h-128'>
+            <div className='h-124 mt-4 flex flex-column align-middle justify-center items-center'>
+                <div class="grid grid-cols-2 gap-9">
+                    <label className="block text-gray-400 font-bold md:text-center mt-3 mb-3 pr-4">Nombre</label>
+                    <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='name' title='name' onChange={updateUserData} lenght='30' placeholder='Nombre' />
+                    
+                    <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Apellido</label>
+                    <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='surname' title='surname' onChange={updateUserData} lenght='30' placeholder='Apellido' />
+                    
+                    <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Email</label>
+                    <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='email' title='email' onChange={updateUserData} lenght='30' placeholder='Email' />
+                    
+                    <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Password</label>
+                    <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='password' name='password' title='password' onChange={updateUserData} lenght='30' placeholder='Contraseña' />
+                    
+                    <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Repite Password</label>
+                    <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='password' name='password2' title='password2' onChange={updateUserData} lenght='30' placeholder='Contraseña' />
 
-
-                <div>
-                    <div class="grid grid-cols-2 gap-9">
-                        <label className="block text-gray-400 font-bold md:text-center mt-3 mb-3 pr-4">Nombre</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='name' title='name' onChange={updateUserData} lenght='30' placeholder='Nombre' />
-
-                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Apellido</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='surname' title='surname' onChange={updateUserData} lenght='30' placeholder='Apellido' />
-
-                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Email</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='email' title='email' onChange={updateUserData} lenght='30' placeholder='Email' />
-
-                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Password</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='password' title='password' onChange={updateUserData} lenght='30' placeholder='Password' />
-
-                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Repite Password</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='password2' title='password2' onChange={updateUserData} lenght='30' placeholder='`Password' />
-
-
-                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Telefono</label>
-                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='phone' title='phone' onChange={updateUserData} lenght='30' placeholder='Telefono' />
-
-                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Direccion</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='address' title='address' onChange={updateUserData} lenght='30' placeholder='Direccion' />
-
-                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Ciudad</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='city' title='city' onChange={updateUserData} lenght='30' placeholder='Ciudad' />
-
-                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Metodo Pago</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='payment' title='payment' onChange={updateUserData} lenght='30' placeholder='Metodo Pago' />
-
-                        <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Fecha Nacimiento</label>
-                        <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='birth' title='birth' onChange={updateUserData} lenght='30' placeholder='Fecha Nacimiento' />
-
-                    </div>
+                    <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Telefono</label>
+                    <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='phone' title='phone' onChange={updateUserData} lenght='30' placeholder='Telefono' />
+                    
+                    <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Direccion</label>
+                    <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='address' title='address' onChange={updateUserData} lenght='30' placeholder='Direccion' />
+                    <div></div>
+                    <div className=" w-64 mt-2 mb-2 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => Register()}>
+                    Registrame
+                    </div>  
                 </div>
 
                 {/* En este div estamos mostrando el contenido del hook msgError, ese contenido a priori siempre son comillas vacías
@@ -150,15 +139,10 @@ const Register = (props) => {
                 {/* Siempre que tengamos botones en un return, les incluyo un callback antes de la funcion
                 ya que en caso contrario, siempre se ejecutarán la primera vez que se cargue el container/componente
                 y no cuando yo haga click que es lo que quiero */}
-                <div class="flex justify-center">
-                    
-                    <div className=" block w-64 mt-2 mb-2 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => Register()}>
-                        Registrame
-                    </div></div>
-
-
-
+                
             </div>
+            
+
         )
     }
 

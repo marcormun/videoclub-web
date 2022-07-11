@@ -9,7 +9,7 @@ import FilmDetail from './containers/FilmDetail/FilmDetail';
 
 function App() {
   return (
-    <div className="font-sans bg-gray-900 text-white w-screen h-max">
+    <div className="font-sans bg-gray-900 text-white w-full h-max">
       <div className="App">
         <BrowserRouter>
 

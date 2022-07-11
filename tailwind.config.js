@@ -10,6 +10,7 @@ module.exports = {
         },
         height: {
             '128': '48.7rem',
+            '124': '47.7rem',
         },
         margin: {
             '128': '35rem',
