@@ -15,10 +15,7 @@ const Register = (props) => {
         password: "",
         password2: "",
         phone: "",
-        address: "",
-        city: "",
-        payment: "",
-        birth: "",
+        address: ""
     });
 
     const [msgError, setMsgError] = useState("");
@@ -31,6 +28,7 @@ const Register = (props) => {
     //Handlers
     const updateUserData = (e) => {
         setDatosUser({ ...datosUser, [e.target.name]: e.target.value })
+        console.log(datosUser)
     }
 
     //Funciones del componente (useEffect)
@@ -51,7 +49,7 @@ const Register = (props) => {
 
         //Primero, comprobación de campos vacíos
 
-        let mandatory = ['name', 'surname', 'email', 'password', 'password2', 'birth', 'payment'];
+        let mandatory = ['name', 'surname', 'email', 'password', 'password2', 'phone', 'address'];
 
         for (let field of mandatory) {
             if (datosUser[field] === '') {
@@ -104,11 +102,11 @@ const Register = (props) => {
 
         console.log(datosUser);
         return (
-            <div>
+            <div className='h-128'>
 
 
                 <div>
-                    <div class="grid grid-cols-6 gap-9">
+                    <div class="grid grid-cols-2 gap-9">
                         <label className="block text-gray-400 font-bold md:text-center mt-3 mb-3 pr-4">Nombre</label>
                         <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='name' title='name' onChange={updateUserData} lenght='30' placeholder='Nombre' />
 
@@ -126,7 +124,7 @@ const Register = (props) => {
 
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Telefono</label>
-                        <input className="w-64 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='phone' title='phone' onChange={updateUserData} lenght='30' placeholder='Telefono' />
+                        <input className="w-64 border-2 border-black-100 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" type='text' name='phone' title='phone' onChange={updateUserData} lenght='30' placeholder='Telefono' />
 
                         <label className="block text-gray-400 font-bold md:text-top mt-3 mb-3 pr-4">Direccion</label>
                         <input className="w-50 border-2 border-black-100 rounded py-2 px-4 text-gray-800 focus:outline-none focus:border-blue-700" type='text' name='address' title='address' onChange={updateUserData} lenght='30' placeholder='Direccion' />
