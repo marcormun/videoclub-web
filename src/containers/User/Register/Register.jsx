@@ -73,12 +73,12 @@ const Register = (props) => {
         //Limpiamos error
         setMsgError(false);
 
-            //try {
+        //try {
 
         //     //axios....comunicamos con el backend
 
         let resultado = await axios.post("https://videoclub-proyecto5.herokuapp.com/api/auth/register", datosUser);
-        
+
 
         setCongratulations(true);
 
@@ -153,10 +153,11 @@ const Register = (props) => {
                 ya que en caso contrario, siempre se ejecutarán la primera vez que se cargue el container/componente
                 y no cuando yo haga click que es lo que quiero */}
                 <div class="flex justify-center">
-                    
+
                     <div className=" block w-64 mt-2 mb-2 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => Register()}>
                         Registrame
-                    </div></div>
+                    </div>
+                </div>
 
 
 
