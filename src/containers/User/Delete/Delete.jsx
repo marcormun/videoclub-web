@@ -47,9 +47,9 @@ const Delete = () => {
             <p className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_phone}</p>
             
 
-            <div class="">
+            <div class="flex  gap-9 items-center justify-center ">
                
-                <div className="block   h-14 w-64 mt-6 bg-red-800 hover:bg-red-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => Delete()}>Delete</div>
+                <div className="block   h-14 w-60 mt-9 bg-red-800 hover:bg-red-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => Delete()}>Delete</div>
             </div>
 
         </div>
