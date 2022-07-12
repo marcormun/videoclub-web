@@ -52,6 +52,7 @@ export const loginUser = (body) => async (dispatch) => {
 
 export const logOut = () => (dispatch) => {
   dispatch(logout());
+  window.location.reload(false);
 };
 
 export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) => {
