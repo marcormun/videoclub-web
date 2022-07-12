@@ -51,7 +51,7 @@ const Update = () => {
 
             <div class="">
                
-                <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => Update()}>Update</div>
+                <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => Update()}>Update</div>
             </div>
 
         </div>
