@@ -1,11 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { update, userData } from '../userSlice';
 import ToUpdate from "../Update/Update";
 import ToDelete from "../Delete/Delete";
 import jwt from 'jwt-decode';
+import Update from '../Update/Update';
 
 
 
@@ -17,17 +18,15 @@ const Profile = () => {
     //Me genero una variable que va a LEER de Redux
     const datosUsuario = useSelector(userData);
 
-    
+    let navigate = useNavigate();
 
 
 
     return (
-        //<pre>{JSON.stringify(datosUsuario, null,2)}</pre>
-
-
-
-
-        <div class="grid grid-cols-2 gap-9 bg-size-auto">
+        
+    
+         <div class="grid grid-cols-2 gap-9 bg-size-auto">
+            <pre>{JSON.stringify(datosUsuario, null,2)}</pre>
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Nombre</label>
             <p className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_name}</p>
@@ -56,9 +55,7 @@ const Profile = () => {
             <div class="flex  gap-9 items-center justify-center">
                 <NavLink to="/Update"  className="button block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => ToUpdate()}>Update</NavLink>
             </div>
-            <div class="flex  gap-9 items-center justify-center">
-                <NavLink to="/Update"  className="button block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => ToUpdate()}>Update</NavLink>
-            </div>
+           
 
         </div>
 
