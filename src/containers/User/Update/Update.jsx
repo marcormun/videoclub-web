@@ -1,8 +1,11 @@
-import React from 'react';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { userData } from '../userSlice';
+
 import jwt from 'jwt-decode';
+
 
 
 
@@ -27,7 +30,7 @@ const Update = () => {
 
 
 
-        <div class="grid grid-cols-3 gap-3 ">
+        <div class="grid grid-cols-3 gap-9 bg-size-auto ">
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Nombre</label>
             <p className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_name}</p>
@@ -50,7 +53,7 @@ const Update = () => {
             <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4"></input>
 
             <div class="flex  gap-9 items-center justify-center">
-               
+
                 <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => Update()}>Update</div>
             </div>
 

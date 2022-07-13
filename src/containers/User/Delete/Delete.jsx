@@ -2,6 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { userData } from '../userSlice';
+import { NavLink, Link } from 'react-router-dom';
+
+
 import jwt from 'jwt-decode';
 
 
@@ -27,7 +30,7 @@ const Delete = () => {
 
 
 
-        <div class="grid grid-cols-2 gap-3 ">
+        <div class="grid grid-cols-2 gap-9 bg-size-auto">
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Nombre</label>
             <p className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_name}</p>
