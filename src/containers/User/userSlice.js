@@ -61,11 +61,15 @@ export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) => {
 
       let body = {
         name: perfilUsuario.user_name,
+        surname: perfilUsuario.user_surname,
         email: perfilUsuario.user_email,
-        password: perfilUsuario.user_password
+        address: perfilUsuario.user_address,
+        city: perfilUsuario.user_city,
+        mobile: perfilUsuario.user_mobile
+
       }
 
-      console.log("soy el maldito body", body);
+    
 
       let config = {
           headers: { Authorization: `Bearer ${datosUsuario.token}` }
@@ -77,9 +81,14 @@ export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) => {
       //en redux.
 
       if(resultado.status === 200) {
-        console.log("entra aqui");
+        if(datosUsuario.user_email !==body.email){
+          dispatch(logout())
+
+        }
         //Hacemos un update local de las credenciales del usuario
          dispatch(update({perfilUsuario}));
+      }else{
+        dispatch(update({perfilUsuario}));
       }
 
       // console.log("soy resultado", resultado);
