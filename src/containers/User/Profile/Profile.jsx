@@ -36,11 +36,11 @@ const Profile = () => {
 
 
             <div class="flex  gap-9 items-center justify-center">
-                <div className=" block  h-14 w-64 mt-6 bg-red-800 hover:bg-red-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => navigate('/Update')}>Modificar Perfil</div>
+                <div className=" block  h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-800cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => navigate('/Update')}>Modificar Perfil</div>
             </div>
 
             <div class="flex  gap-9 items-center justify-center">
-                <div className="button block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" >xxxxxxx</div>
+                <div className="button block   h-14 w-64 mt-6 bg-red-700 hover:bg-red-800 cursor-pointer text-white font-bold py-2 px-4 rounded" >Dar de Baja</div>
             </div>
         </div>
 
