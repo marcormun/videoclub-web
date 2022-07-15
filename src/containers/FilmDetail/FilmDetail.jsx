@@ -3,15 +3,38 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { userData } from '../../containers/User/userSlice';
 import { takeData } from './detailSlice'; 
+import axios from 'axios';
+import moment from 'moment';
 
 const FilmDetail = () => {
-
     let detallesPelicula = useSelector(takeData);
+    let credenciales = useSelector(userData);
     let navegador = useNavigate();
     useEffect(()=>{
         
         console.log(detallesPelicula);
     },[]);
+
+    const alquilar = async () => {
+        let orderDate = moment().format('YYYY-MM-DD');
+        let returnDate = moment().add(7, 'days').format('YYYY-MM-DD');
+        if(!credenciales.user_role){
+            navegador('/login');
+        }
+        else{
+            let config = {
+                headers: {Authorization: `Bearer ${credenciales.token}`}
+            };
+            console.log(detallesPelicula._id)
+            let body = {
+                "orderDate": orderDate,
+                "returnDate": returnDate,
+                "filmId": detallesPelicula._id
+            }
+            let order = await axios.post("https://videoclub-proyecto5.herokuapp.com/api/orders",body, config);
+            console.log(order);
+        }
+    }
      return (
          <div className='movie-info border-b border-gray-800'>
             <div className="container mx-auto px-4 py-16 flex">
@@ -44,7 +67,7 @@ const FilmDetail = () => {
                         </div>
                     </div>
                     <div className='mt-12 flex'>
-                        <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Alquilar</button>
+                        <button type="button" onClick={()=> alquilar()} className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Alquilar</button>
                     </div>
                 </div>
             </div>

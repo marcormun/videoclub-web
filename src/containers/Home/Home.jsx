@@ -4,6 +4,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import { keepFilm } from '../../containers/FilmDetail/detailSlice';
 import { useNavigate } from 'react-router-dom';
 import { searchData } from '../../components/Header/searchSlice';
+
 const Home = () => {
     let peliculasFiltro = useSelector(searchData);
     let navegador = useNavigate();
@@ -23,9 +24,15 @@ const Home = () => {
     const PeliculasApi = async () => {
         try {
             let peliculas = await axios.get("https://videoclub-proyecto5.herokuapp.com/api/films");
+            if(!peliculasFiltro){
+                setPeliculasDefecto(peliculas.data.data);
+            }else{
+                const pelisFiltradas = peliculas.data.data.filter((peli) => peli.title.includes(peliculasFiltro));
+                console.log(pelisFiltradas);
+                setPeliculasDefecto(pelisFiltradas);
+            }
             
             //seteo las películas al hook para que se recargue el componente
-            setPeliculasDefecto(peliculas.data.data);
             
         } catch (error) {
             console.log(error)

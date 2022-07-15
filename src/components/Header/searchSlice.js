@@ -29,6 +29,6 @@ export const searchFilm = (argumento) => async (dispatch) => {
 //Exporto las funciones que en si realizan la accion
 export const { searchFilms } = searchSlice.actions;
 
-export const searchData = (state) => state.searchFilms;
+export const searchData = (state) =>  state.search.films;
 
 export default searchSlice.reducer;

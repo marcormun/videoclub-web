@@ -5,15 +5,6 @@ import { useSelector } from 'react-redux';
 import { userData } from '../userSlice';
 import { NavLink, Link } from 'react-router-dom';
 
-
-
-
-
-
-
-
-
-
 const Delete = () => {
 
     //Me genero una variable que va a LEER de Redux
