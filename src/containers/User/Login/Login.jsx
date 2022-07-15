@@ -82,7 +82,7 @@ const Login = () => {
      return (
          <div className='flex flex-col content-center items-center align-middle h-128 w-64 ml-auto mr-auto'>
             <label className="block h-12 text-gray-500 font-bold md:text-top mt-6 pr-4">Correo</label>
-            <input type='email' class="w-64 h-12 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" 
+            <input type='email' className="w-64 h-12 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700" 
                 name='email' title='email' onChange={updateCredentials} lenght='30' placeholder='email@email.com'/>
             <label className="block h-12 text-gray-500 font-bold md:text-top mt-6 pr-4">Contraseña</label>
             <input  className="w-64 h-12 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-700"

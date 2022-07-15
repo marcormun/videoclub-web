@@ -3,27 +3,32 @@ import { SearchIcon,FilmIcon } from '@heroicons/react/solid'
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { userData, logOut } from '../../containers/User/userSlice';
+import { searchFilm } from './searchSlice';
 
 
 const Header = () => {
+    const [pelicula, setPelicula] = useState('');
+    
     const credenciales = useSelector(userData);
+
     let navegador = useNavigate();
     const dispatch = useDispatch();
     
-    const [pelicula, setPelicula] = useState('');
 
 
 
     const viajar = (destino) => {
         navegador(destino)
     };
-    const handleFilm = (e) => {
-        setPelicula(e.target.value);
-    }
-    const buscarPelicula = () => {
-        navegador('/')
+
+    const cambiarPelicula = (e) => {
+        setPelicula(e);
     };
 
+    const buscarPelicula = () => {
+        dispatch(searchFilm(pelicula));
+        navegador('/login');
+    };
     return(
         <div className="font-sans bg-gray-900 text-white">
                 <nav className="border-b border-gray-800">
@@ -41,11 +46,12 @@ const Header = () => {
                         <div className='flex'>
                             <div className="flex items-center">
                                 <div className="relative">
-                                    <input type="text" onChange={handleFilm} className="bg-gray-800 rounded-full w-48 px-4 py-1 focus:outline-none focus:shadow-outline" placeholder='Busca una pelicula'/>
+                                    <input id="" type="text" onChange={(event) => cambiarPelicula(event.target.value)}  className="bg-gray-800 rounded-full w-48 px-4 py-1 focus:outline-none focus:shadow-outline" placeholder='Busca una pelicula'/>
                                 </div>
-                                <SearchIcon className="cursor-pointer ml-4 h-6 w-6 text-white" onClick={() => buscarPelicula()} />
-
                             </div>
+                            <button onClick={() => buscarPelicula()}>
+                                <SearchIcon className="cursor-pointer ml-4 h-6 w-6 text-white"/>
+                                </button>
                             {!credenciales.user_role ?
                                 <ul className="flex items-center">
                                     <li className='ml-16'>

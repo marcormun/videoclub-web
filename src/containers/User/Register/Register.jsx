@@ -71,12 +71,11 @@ const Register = (props) => {
         //Limpiamos error
         setMsgError(false);
 
-            //try {
+        //try {
 
         //     //axios....comunicamos con el backend
 
         let resultado = await axios.post("https://videoclub-proyecto5.herokuapp.com/api/auth/register", datosUser);
-        console.log(resultado);
 
         setCongratulations(true);
 

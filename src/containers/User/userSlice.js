@@ -37,6 +37,7 @@ export const loginUser = (body) => async (dispatch) => {
       const user = await axios.post("https://videoclub-proyecto5.herokuapp.com/api/auth/login",body);
       
       let decodificada = jwt(user.data.token);
+      console.log(decodificada)
 
       //En caso de que todo haya ido bien, es decir, el backend y la red nos responden con un código 200 que significa que todo está ok
       if(user.status === 200) {
@@ -52,6 +53,7 @@ export const loginUser = (body) => async (dispatch) => {
 
 export const logOut = () => (dispatch) => {
   dispatch(logout());
+  window.location.reload(false);
 };
 
 export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) => {
@@ -80,11 +82,6 @@ export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) => {
         //Hacemos un update local de las credenciales del usuario
          dispatch(update({perfilUsuario}));
       }
-
-      // console.log("soy resultado", resultado);
-
-
-      
   } catch (error) {
 
       console.log(error);

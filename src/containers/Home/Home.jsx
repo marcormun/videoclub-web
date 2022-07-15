@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { useSelector,useDispatch } from 'react-redux';
-import { searchData } from '../../components/Header/searchSlice';
 import { keepFilm } from '../../containers/FilmDetail/detailSlice';
 import { useNavigate } from 'react-router-dom';
+import { searchData } from '../../components/Header/searchSlice';
 const Home = () => {
-
-    let peliculas = useSelector(searchData);
+    let peliculasFiltro = useSelector(searchData);
     let navegador = useNavigate();
     let dispatch = useDispatch();
 
@@ -17,6 +16,7 @@ const Home = () => {
 
     useEffect(()=>{
         PeliculasApi();
+        console.log(peliculasFiltro);
     },[]);
 
     //Funciones
@@ -26,7 +26,6 @@ const Home = () => {
             
             //seteo las películas al hook para que se recargue el componente
             setPeliculasDefecto(peliculas.data.data);
-            console.log(peliculas.data.data);
             
         } catch (error) {
             console.log(error)
