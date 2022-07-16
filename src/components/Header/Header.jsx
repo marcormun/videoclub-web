@@ -29,6 +29,10 @@ const Header = () => {
         dispatch(searchFilm(pelicula));
         navegador('/login');
     };
+    const cerrarSesion = () => {
+        dispatch(logOut());
+        viajar("/");
+    }
     return(
         <div className="font-sans bg-gray-900 text-white">
                 <nav className="border-b border-gray-800">
@@ -67,7 +71,7 @@ const Header = () => {
                                         <div className='textLink cursor-pointer' onClick={() => viajar("/profile")}>Perfil</div>
                                     </li>
                                     <li className='ml-16'>
-                                        <div className='textLink cursor-pointer' onClick={() => dispatch(logOut())}>Cerrar sesión</div>
+                                        <div className='textLink cursor-pointer' onClick={() => cerrarSesion()}>Cerrar sesión</div>
                                     </li>
                                 </ul>
                             }
