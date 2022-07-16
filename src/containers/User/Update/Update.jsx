@@ -17,7 +17,7 @@ const Editprofile = () => {
     const navigate = useNavigate();
 
 
-    //Hocks
+    //Hooks
 
     const [perfilUsuario, setPerfilUsuario] = useState({
         user_name: datosUsuario.user_name,
@@ -29,14 +29,36 @@ const Editprofile = () => {
         user_token: datosUsuario.user_token
 
     })
-  
+    const [msgError, setMsgError] = useState("")
+
 
     //handkeys
 
     const handlerInputs = (e) => {
+        console.log("target", e.target.value)
         setPerfilUsuario({ ...perfilUsuario, [e.target.name]: e.target.value })
+        console.log("perfil", perfilUsuario);
+        console.log("datos user", datosUsuario);
 
     }
+
+    const EditDetails = () => {
+
+        dispatch(updateUser(datosUsuario.perfilUsuario),
+            navigate('/')
+        )
+    }
+
+    useEffect(() => {
+
+    }, [])
+
+    useEffect(() => {
+        if (datosUsuario.token === "") {
+            navigate('/')
+        }
+    })
+
 
 
 
@@ -47,7 +69,7 @@ const Editprofile = () => {
 
 
         <div class="grid grid-cols-2 gap-4 bg-size-auto ">
-            <pre>{JSON.stringify(datosUsuario, null,2)}</pre>
+            <pre>{JSON.stringify(datosUsuario, null, 2)}</pre>
 
 
 
@@ -58,20 +80,20 @@ const Editprofile = () => {
             <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3" value={perfilUsuario.user_surname} name='user_surname' title='surname' onChange={handlerInputs}></input>
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Email</label>
-            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4"value={perfilUsuario.user_email} name='user_email' title='email' disabled onChange={handlerInputs}></input>
+            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_email} name='user_email' title='email' disabled onChange={handlerInputs}></input>
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Direccion</label>
-            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4"value={perfilUsuario.user_address} name='user_address' title='address' onChange={handlerInputs}></input>
+            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_address} name='user_address' title='address' onChange={handlerInputs}></input>
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Localidad</label>
-            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4"value={perfilUsuario.user_city} name='user_city' title='city' onChange={handlerInputs}></input>
+            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_city} name='user_city' title='city' onChange={handlerInputs}></input>
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Telefono</label>
-            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4"value={perfilUsuario.user_phone} name='user_phone' title='phone' onchanges={handlerInputs}></input>
+            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_phone} name='user_phone' title='phone' onchanges={handlerInputs}></input>
 
             <div class="flex  gap-9 items-center justify-center">
 
-                <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => dispatch(updateUser(datosUsuario, perfilUsuario), navigate('/'))}>Guardar</div>
+                <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => EditDetails()}>Guardar</div>
             </div>
 
         </div>
