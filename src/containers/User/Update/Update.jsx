@@ -25,7 +25,7 @@ const Editprofile = () => {
         user_email: datosUsuario.user_email,
         user_address: datosUsuario.user_address,
         user_city: datosUsuario.user_city,
-        user_mobile: datosUsuario.user_mobile,
+        user_phone: datosUsuario.user_phone,
         user_token: datosUsuario.user_token
 
     })
@@ -67,7 +67,7 @@ const Editprofile = () => {
             <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4"value={perfilUsuario.user_city} name='user_city' title='city' onChange={handlerInputs}></input>
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Telefono</label>
-            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4"value={perfilUsuario.user_mobile} name='user_mobile' title='mobile' onchanges={handlerInputs}></input>
+            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4"value={perfilUsuario.user_phone} name='user_phone' title='phone' onchanges={handlerInputs}></input>
 
             <div class="flex  gap-9 items-center justify-center">
 

@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import jwt from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 
 export const userSlice = createSlice({
     name: 'user',
@@ -54,6 +55,20 @@ export const logOut = () => (dispatch) => {
   window.location.reload(false);
 };
 
+
+
+/*
+export const Delete = (datosUsuario) => async (dispatch) => {
+  let config = {
+    headers: { Authorization: `Bearer ${datosUsuario.token}` }
+};
+
+let BajaUser = await axios.delete(`https://videoclub-proyecto5.herokuapp.com/api/users/${datosUsuario.user_id}`);
+  
+  useNavigate("/");
+  window.location.reload(false);
+};
+*/
 export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) => {
         
   try {
@@ -64,7 +79,7 @@ export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) => {
         email: perfilUsuario.user_email,
         address: perfilUsuario.user_address,
         city: perfilUsuario.user_city,
-        mobile: perfilUsuario.user_mobile
+        phone: perfilUsuario.user_phone
 
       }
 
