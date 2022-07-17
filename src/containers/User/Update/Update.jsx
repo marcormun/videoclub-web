@@ -68,27 +68,29 @@ const Profile = () => {
         <div class="grid grid-cols-2 gap-4 bg-size-auto ">
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Nombre</label>
-            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_name} name='user_name' title='user_name' onChange={handlerInputs}></input>
+            <input type="text" className="text-center rounded block w-44 text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_name} name='user_name' title='user_name' onChange={handlerInputs}></input>
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Apellido</label>
-            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3" value={perfilUsuario.user_surname} name='user_surname' title='user_surname' onChange={handlerInputs}></input>
+            <input type="text" className="text-center rounded block w-44 text-blue-500 font-bold md:text-top mt-3 mb-3" value={perfilUsuario.user_surname} name='user_surname' title='user_surname' onChange={handlerInputs}></input>
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Email</label>
-            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_email} name='user_email' title='user_email' disabled onChange={handlerInputs}></input>
+            <input type="text" className="text-center rounded block w-44 text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_email} name='user_email' title='user_email' disabled onChange={handlerInputs}></input>
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Direccion</label>
-            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_address} name='user_address' title='user_address' onChange={handlerInputs}></input>
+            <input type="text" className="text-center rounded block w-44 text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_address} name='user_address' title='user_address' onChange={handlerInputs}></input>
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Telefono</label>
-            <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_phone} name='user_phone' title='user_phone' onchanges={handlerInputs}></input>
-
-            <div class="flex  gap-9 items-center justify-center">
-                <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => dispatch(updateUser(datosUsuario, perfilUsuario))}>Guardar</div>
-            </div>
+            <input type="text" className="text-center rounded block w-44 text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_phone} name='user_phone' title='user_phone' onchanges={handlerInputs}></input>
             
             <div class="flex  gap-9 items-center justify-center">
                 <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => navigate('/profile')}>Atras</div>
             </div>
+
+            <div class="flex  gap-9 items-center justify-center">
+                <div className="block h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => dispatch(updateUser(datosUsuario, perfilUsuario))}>Guardar</div>
+            </div>
+
+            
         </div>
     </div>
 
