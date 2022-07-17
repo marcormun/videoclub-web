@@ -13,9 +13,9 @@ Contiene la vista principal, con todas las peliculas listadas, una página de de
 
 ## Imágenes
 
-![image](https://user-images.githubusercontent.com/102702041/179423194-bc190998-5577-4284-9c32-4fca97f399e0.png)
+<img width="1054" alt="image" src="https://user-images.githubusercontent.com/102702041/179423312-8e33891a-ea0d-45b2-bd32-c22be2bd6767.png">
 
-![image](https://user-images.githubusercontent.com/102702041/179423199-23ced4da-c194-4fec-b33b-1e029a2fa193.png)
+<img width="949" alt="image" src="https://user-images.githubusercontent.com/102702041/179423325-2d5209c1-5e2c-47ae-987d-7f1219a0167f.png">
 
 <img width="368" alt="image" src="https://user-images.githubusercontent.com/102702041/179423220-5fe4b2c7-56e0-41d4-8d52-9f5f2d14fdc1.png">
 
