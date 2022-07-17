@@ -70,8 +70,8 @@ let BajaUser = await axios.delete(`https://videoclub-proyecto5.herokuapp.com/api
 };
 */
 export const updateUser = (datosUsuario, perfilUsuario) => async (dispatch) => {
-  console.log("perfil usuario slice",perfilUsuario)
-  console.log("datos usuario slice",datosUsuario)
+  console.log("perfil usuario",perfilUsuario)
+  console.log("datos usuario",datosUsuario)
 
 
   try {
@@ -89,29 +89,23 @@ export const updateUser = (datosUsuario, perfilUsuario) => async (dispatch) => {
 
 
     let config = {
-      headers: { Authorization: `Bearer ${datosUsuario.token}` }
+      headers: { Authorization: `Bearer ${perfilUsuario.token}` }
     };
 
     let resultado = await axios.put(`https://videoclub-proyecto5.herokuapp.com/api/users/${datosUsuario.user_id}`, body, config);
-
+    
     //Después de cambiar en la database los datos de usuario, cambiamos esos datos
     //en redux.
 
     if (resultado.status === 200) {
-      //Si el usuario cambia email o password le fuerzo un logout
-      
-       
-        
-      
-dispatch(update({ perfilUsuario }));
-      
      
+          dispatch(update({perfilUsuario}));
+      
+     }
 
-    }
-
-  } catch (error) {
+  }catch (error) {
     console.log(error)
-  }
+    }
 }
 export const { login, logout, update } = userSlice.actions;
 
