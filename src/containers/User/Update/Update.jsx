@@ -65,7 +65,11 @@ const Profile = () => {
     return (
         //<pre>{JSON.stringify(datosUsuario, null,2)}</pre>
 
+<div>
+            <div>
 
+                <h1 className="block text-green-500 font-bold md:text-top mt-3 mb-3 pr-4">Los cambios seran efectivos despues de cerrar sesion  </h1>
+            </div>
 
 
         <div class="grid grid-cols-2 gap-4 bg-size-auto ">
@@ -95,7 +99,7 @@ const Profile = () => {
                 <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => navigate('/')}>Atras</div>
             </div>
 
-        </div>
+        </div></div>
 
     )
 }

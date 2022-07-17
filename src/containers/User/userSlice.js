@@ -57,18 +57,25 @@ export const logOut = () => (dispatch) => {
 
 
 
-/*
-export const Delete = (datosUsuario) => async (dispatch) => {
+
+export const deleteUser = (datosUsuario) => async (dispatch) => {
+  console.log("datos usuario",datosUsuario);
+  
+
+
   let config = {
     headers: { Authorization: `Bearer ${datosUsuario.token}` }
+  };
+
+  let DeleteUser = await axios.delete(`https://videoclub-proyecto5.herokuapp.com/api/users/${datosUsuario.user_id}`, config);
+  
+  window.location.reload(false);
+  
+ 
 };
 
-let BajaUser = await axios.delete(`https://videoclub-proyecto5.herokuapp.com/api/users/${datosUsuario.user_id}`);
-  
-  useNavigate("/");
-  window.location.reload(false);
-};
-*/
+
+
 export const updateUser = (datosUsuario, perfilUsuario) => async (dispatch) => {
   console.log("perfil usuario",perfilUsuario)
   console.log("datos usuario",datosUsuario)
@@ -89,11 +96,12 @@ export const updateUser = (datosUsuario, perfilUsuario) => async (dispatch) => {
 
 
     let config = {
-      headers: { Authorization: `Bearer ${perfilUsuario.token}` }
+      headers: { Authorization: `Bearer ${datosUsuario.token}` }
     };
 
     let resultado = await axios.put(`https://videoclub-proyecto5.herokuapp.com/api/users/${datosUsuario.user_id}`, body, config);
-    
+    console.log(resultado,"resultado despues axios");
+    console.log("datos usuario despues axios", datosUsuario);
     //Después de cambiar en la database los datos de usuario, cambiamos esos datos
     //en redux.
 

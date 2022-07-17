@@ -40,7 +40,7 @@ const Profile = () => {
             </div>
 
             <div class="flex  gap-9 items-center justify-center">
-                <div className="button block   h-14 w-64 mt-6 bg-red-700 hover:bg-red-800 cursor-pointer text-white font-bold py-2 px-4 rounded" >Dar de Baja</div>
+                <div className="button block   h-14 w-64 mt-6 bg-red-700 hover:bg-red-800 cursor-pointer text-white font-bold py-2 px-4 rounded"onClick={() => navigate('/Delete')}>Dar de Baja</div>
             </div>
         </div>
 
