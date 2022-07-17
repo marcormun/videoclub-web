@@ -43,11 +43,11 @@ const Editprofile = () => {
     }
 
     const EditDetails = () => {
-
-        dispatch(updateUser(datosUsuario.perfilUsuario),
-            navigate('/')
-        )
-    }
+        
+            dispatch(updateUser(datosUsuario.perfilUsuario),
+                navigate('/')
+            )
+        }
 
     useEffect(() => {
 

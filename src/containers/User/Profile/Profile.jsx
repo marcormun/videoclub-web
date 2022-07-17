@@ -14,6 +14,7 @@ const Profile = () => {
     return (
         //<pre>{JSON.stringify(datosUsuario, null,2)}</pre>
         <div class="grid grid-cols-2 gap-5 bg-size-auto">
+            <pre>{JSON.stringify(datosUsuario, null,2)}</pre>
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Nombre</label>
             <p className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_name}</p>
@@ -28,9 +29,6 @@ const Profile = () => {
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Direccion</label>
             <p className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_address}</p>
 
-
-            <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Ciudad</label>
-            <p className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_city}</p>
 
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Telefono</label>

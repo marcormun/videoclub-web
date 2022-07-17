@@ -95,8 +95,14 @@ export const updateUser = (datosUsuario, perfilUsuario) => async (dispatch) => {
     //en redux.
 
     if (resultado.status === 200) {
-
-      dispatch(update({ perfilUsuario }));
+      //Si el usuario cambia email o password le fuerzo un logout
+      
+       
+        
+      
+dispatch(update({ perfilUsuario }));
+      
+     
 
     }
 
