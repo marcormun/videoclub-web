@@ -59,21 +59,13 @@ const Profile = () => {
         }
     })
 
-
-
-
     return (
-        //<pre>{JSON.stringify(datosUsuario, null,2)}</pre>
 
-<div>
-            <div>
-
-                <h1 className="block text-green-500 font-bold md:text-top mt-3 mb-3 pr-4">Los cambios seran efectivos despues de cerrar sesion  </h1>
-            </div>
-
-
+    <div>
+        <div>
+            <h1 className="block text-green-500 font-bold md:text-top mt-3 mb-3 pr-4">Los cambios seran efectivos despues de cerrar sesion  </h1>
+        </div>
         <div class="grid grid-cols-2 gap-4 bg-size-auto ">
-
 
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Nombre</label>
             <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_name} name='user_name' title='user_name' onChange={handlerInputs}></input>
@@ -91,15 +83,14 @@ const Profile = () => {
             <input type="text" className="block text-blue-500 font-bold md:text-top mt-3 mb-3 pr-4" value={perfilUsuario.user_phone} name='user_phone' title='user_phone' onchanges={handlerInputs}></input>
 
             <div class="flex  gap-9 items-center justify-center">
-
                 <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => dispatch(updateUser(datosUsuario, perfilUsuario))}>Guardar</div>
             </div>
+            
             <div class="flex  gap-9 items-center justify-center">
-
-                <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => navigate('/')}>Atras</div>
+                <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => navigate('/profile')}>Atras</div>
             </div>
-
-        </div></div>
+        </div>
+    </div>
 
     )
 }

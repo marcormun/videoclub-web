@@ -12,10 +12,8 @@ const Profile = () => {
     const navigate = useNavigate();
 
     return (
-        //<pre>{JSON.stringify(datosUsuario, null,2)}</pre>
-        <div class="grid grid-cols-2 gap-5 bg-size-auto">
+        <div class="grid grid-cols-2 gap-5 h-5/6">
             
-
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Nombre</label>
             <p className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_name}</p>
             
@@ -36,7 +34,7 @@ const Profile = () => {
 
 
             <div class="flex  gap-9 items-center justify-center">
-                <div className=" block  h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-800cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => navigate('/Update')}>Modificar Perfil</div>
+                <div className="block h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-800 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => navigate('/Update')}>Modificar Perfil</div>
             </div>
 
             <div class="flex  gap-9 items-center justify-center">
