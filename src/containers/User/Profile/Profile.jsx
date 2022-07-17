@@ -12,7 +12,7 @@ const Profile = () => {
     const navigate = useNavigate();
 
     return (
-        <div class="grid grid-cols-2 gap-5 h-5/6">
+        <div class="grid grid-cols-2 gap-9 h-5/6">
             
             <label className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">Nombre</label>
             <p className="block text-gray-500 font-bold md:text-top mt-3 mb-3 pr-4">{datosUsuario.user_name}</p>
