@@ -22,7 +22,7 @@ const Delete = () => {
     <div>
             <div>
 
-                <h1 className="block text-red-500 font-bold md:text-top mt-3 mb-3 pr-4">Te hecharemos de menos pero si todavia quieres irte pulsa el boton Rojo  </h1>
+                <h1 className="block text-red-500 font-bold md:text-top mt-3 mb-3 pr-4">Te echaremos de menos pero si todavia quieres irte pulsa el boton Rojo  </h1>
             </div>
             
             <div class="grid grid-cols-2 gap-9 bg-size-auto">
