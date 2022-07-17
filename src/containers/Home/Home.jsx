@@ -50,7 +50,7 @@ const Home = () => {
     }
 
     return (
-        <div className='container mx-auto px4 pt-16'>
+        <div className='container mx-auto px4 pt-16 min-w-max'>
             <h2 className="uppercase tracking-wider text-orange-300 text-2xl font-bold mb-6">Catálogo</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {
