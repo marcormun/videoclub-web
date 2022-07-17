@@ -70,6 +70,9 @@ let BajaUser = await axios.delete(`https://videoclub-proyecto5.herokuapp.com/api
 };
 */
 export const updateUser = (datosUsuario, perfilUsuario) => async (dispatch) => {
+  console.log("perfil usuario slice",perfilUsuario)
+  console.log("datos usuario slice",datosUsuario)
+
 
   try {
 

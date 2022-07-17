@@ -9,7 +9,7 @@ import { updateUser, userData } from '../userSlice';
 
 
 
-const Editprofile = () => {
+const Profile = () => {
 
     //Me genero una variable que va a LEER de Redux
     const datosUsuario = useSelector(userData);
@@ -37,17 +37,17 @@ const Editprofile = () => {
     const handlerInputs = (e) => {
         console.log("target", e.target.value)
         setPerfilUsuario({ ...perfilUsuario, [e.target.name]: e.target.value })
-        console.log("perfil", perfilUsuario);
+        console.log("perfil usuario update", perfilUsuario);
         console.log("datos user", datosUsuario);
 
     }
-
+/*
     const EditDetails = () => {
         
             dispatch(updateUser(datosUsuario.perfilUsuario),
                 navigate('/')
             )
-        }
+        }*/
 
     useEffect(() => {
 
@@ -93,11 +93,11 @@ const Editprofile = () => {
 
             <div class="flex  gap-9 items-center justify-center">
 
-                <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => EditDetails()}>Guardar</div>
+                <div className="block   h-14 w-64 mt-6 bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 rounded" onClick={() => dispatch(updateUser(datosUsuario,perfilUsuario))}>Guardar</div>
             </div>
 
         </div>
 
     )
 }
-export default Editprofile; 
+export default Profile; 
