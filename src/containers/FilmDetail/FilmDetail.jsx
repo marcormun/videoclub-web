@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { userData } from '../../containers/User/userSlice';
@@ -7,6 +7,7 @@ import axios from 'axios';
 import moment from 'moment';
 
 const FilmDetail = () => {
+    const [alquiler, setAlquiler] = useState();
     let detallesPelicula = useSelector(takeData);
     let credenciales = useSelector(userData);
     let navegador = useNavigate();
@@ -16,6 +17,7 @@ const FilmDetail = () => {
     },[]);
 
     const alquilar = async () => {
+        
         let orderDate = moment().format('YYYY-MM-DD');
         let returnDate = moment().add(7, 'days').format('YYYY-MM-DD');
         if(!credenciales.user_role){
@@ -29,10 +31,16 @@ const FilmDetail = () => {
             let body = {
                 "orderDate": orderDate,
                 "returnDate": returnDate,
+                "userId": credenciales.user_id,
                 "filmId": detallesPelicula._id
             }
             let order = await axios.post("https://videoclub-proyecto5.herokuapp.com/api/orders",body, config);
-            console.log(order);
+            console.log(order.data.message);
+            if(order.data.message === "Order created succesfully"){
+                setAlquiler(true);
+            }else{
+                setAlquiler(false);
+            }
         }
     }
      return (
@@ -69,6 +77,15 @@ const FilmDetail = () => {
                     <div className='mt-12 flex'>
                         <button type="button" onClick={()=> alquilar()} className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Alquilar</button>
                     </div>
+                    {alquiler==true ?
+                        <div className="mt-12 flex text-lime-400">
+                            Alquiler realizado correctamente
+                        </div>
+                    :
+                        <div className="mt-12 flex text-red-600">
+                            Ya tienes una pelicula alquilada
+                        </div>
+                    }
                 </div>
             </div>
          </div>
